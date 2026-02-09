@@ -6,7 +6,6 @@ import {
   View,
   StyleSheet,
   Image,
-  Font,
 } from "@react-pdf/renderer";
 import { type AssetData } from "../types";
 import jsBarcode from "jsbarcode";
@@ -28,8 +27,8 @@ const styles = StyleSheet.create({
 
   card: {
     width: "50%",
-    height: 120,
-    padding: 10,
+    height: 80,
+    padding: 4,
     alignItems: "center",
     justifyContent: "center",
 
@@ -44,7 +43,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
   textContainer: {
-    marginTop: 5,
+    marginTop: 3,
     alignItems: "center",
   },
   textRow: {
@@ -100,12 +99,12 @@ export const PdfDocument: React.FC<Props> = ({ data }) => {
 
                 <View style={styles.textContainer}>
                   <View style={styles.textRow}>
-                    <Text style={styles.bold}>{item["Organization Name"]}</Text>
-                    <Text style={styles.text}> - </Text>
-                    <Text style={styles.bold}>{item["Staff ID"]}</Text>
+                    <Text style={styles.subText}>
+                      {item["Organization Name"]}
+                    </Text>
+                    <Text style={styles.subText}>{item["Staff ID"]}</Text>
+                    <Text style={styles.subText}>{item["Full Name"]}</Text>
                   </View>
-
-                  <Text style={styles.subText}>{item["Full Name"]}</Text>
                 </View>
               </View>
             );
