@@ -6,7 +6,6 @@ import {
   View,
   StyleSheet,
   Image,
-  Font,
 } from "@react-pdf/renderer";
 import { type AssetData } from "../types";
 import jsBarcode from "jsbarcode";
@@ -91,7 +90,7 @@ export const PdfDocument: React.FC<Props> = ({ data }) => {
         <View style={styles.gridContainer}>
           {data.map((item, index) => {
             const barcodeUrl = generateBarcodeDataUrl(
-              `${item["Organization Name"]} ${item["Staff ID"]} ${item["Full Name"]}`,
+              `${item["organizationName"]} ${item["staffID"]} ${item["fullName"]}`,
             );
 
             return (
@@ -100,12 +99,12 @@ export const PdfDocument: React.FC<Props> = ({ data }) => {
 
                 <View style={styles.textContainer}>
                   <View style={styles.textRow}>
-                    <Text style={styles.bold}>{item["Organization Name"]}</Text>
+                    <Text style={styles.bold}>{item["organizationName"]}</Text>
                     <Text style={styles.text}> - </Text>
-                    <Text style={styles.bold}>{item["Staff ID"]}</Text>
+                    <Text style={styles.bold}>{item["staffID"]}</Text>
                   </View>
 
-                  <Text style={styles.subText}>{item["Full Name"]}</Text>
+                  <Text style={styles.subText}>{item["fullName"]}</Text>
                 </View>
               </View>
             );

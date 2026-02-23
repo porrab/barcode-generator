@@ -1,6 +1,7 @@
 export interface AssetData {
-  No: string | Number;
-  "Organization Name": string;
-  "Staff ID": string;
-  "Full Name": string;
+  no: string | number;
+  organizationName: string;
+  staffID: string;
+  fullName: string;
+  modifiedAt?: number | string;
 }

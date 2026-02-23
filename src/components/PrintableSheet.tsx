@@ -36,7 +36,7 @@ export const PrintableSheet = React.forwardRef<HTMLDivElement, Props>(
             >
               <div style={{ maxWidth: "100%", overflow: "hidden" }}>
                 <Barcode
-                  value={`${item["Organization Name"]} ${item["Staff ID"]} ${item["Full Name"]}`}
+                  value={`${item["organizationName"]} ${item["staffID"]} ${item["fullName"]}`}
                   width={1.2}
                   height={40}
                   fontSize={14}
@@ -61,10 +61,10 @@ export const PrintableSheet = React.forwardRef<HTMLDivElement, Props>(
                 }}
               >
                 <span style={{ fontWeight: "bold" }}>
-                  {item["Organization Name"]}
+                  {item["organizationName"]}
                 </span>
-                <span>{item["Staff ID"]}</span>
-                <span>{item["Full Name"]}</span>
+                <span>{item["staffID"]}</span>
+                <span>{item["fullName"]}</span>
               </div>
             </div>
           ))}

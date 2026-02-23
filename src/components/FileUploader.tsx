@@ -66,10 +66,10 @@ export const FileUploader: React.FC<Props> = ({ onDataLoaded }) => {
 
       if (staffId || fullName) {
         processed.push({
-          No: Number(no),
-          "Organization Name": cleanValue(org),
-          "Staff ID": cleanValue(staffId),
-          "Full Name": cleanValue(fullName),
+          no: Number(no) || "",
+          organizationName: cleanValue(org),
+          staffID: cleanValue(staffId),
+          fullName: cleanValue(fullName),
         });
       }
     });
